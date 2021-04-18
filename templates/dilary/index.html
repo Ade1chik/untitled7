@@ -1,0 +1,232 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>eldiary.ru</title>
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- header -->
+<header class="w3l-header">
+	<div class="hero-header-11">
+		<div class="hero-header-11-content">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light py-md-2 py-0 px-0">
+					<a class="navbar-brand" href = "{% url 'home' %}"><img src="../../static/assets/images/снимок.png" alt="" /></a>
+					<!-- if logo is image enable this   
+				<a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+				</a> -->
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+						<span class="navbar-toggler-icon fa icon-close fa-times"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href = "{% url 'new3' %}">Мой дневник<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item @@about-active">
+								<a class="nav-link" href="{% url 'new' %}">Информация о школе</a>
+							</li>
+							
+							<li class="nav-item @@contact-active">
+								<a class="nav-link" href="{% url 'landing' %}">Поддержка</a>
+							</li>
+							<li class="nav-item @@contact-active">
+
+                                 {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'logout_url' %}">Выйти</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'new2' %}">Войти</a>
+                    {% endif %}
+
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- //header -->
+ <!--  Main banner section -->
+ <section class="w3l-main-banner">
+   <div class="companies20-content">
+     <div class="companies-wrapper">
+       <div class="container">
+         <div class="banner-item">
+           <div class="banner-view">
+             <div class="banner-info">
+               <h3 class="banner-text">
+Электронное образование<br> 
+               </h3>
+              <h3> <p class="my-4 mb-sm-5">ElDiary - цифровая образовательная платформа, которая помогает:
+			  <br>
+			  <br>
+- вести электронный журнал<br>
+- просматривать электронный дневник<br>
+- вести контроль посещаемости<br>
+- предоставлять информацию о актуальных событиях и мероприятиях<br>
+- получать полную отчетность учебного процесса <br>
+               </p></h3><br>
+              
+              
+                   
+            
+                    
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!--  //Main banner section -->
+<section class="w3l-index5" id="about">
+  <div class="new-block py-5">
+    <div class="container py-lg-3">
+      <div class="header-section text-center">
+        <h3>Возможности</h3>
+        <p class="mt-3 mb-5">ElDiary.ru – закрытая информационная система со строгим порядком регистрации образовательных учреждений и пользователей.</p>
+        <a href="#signup.html" class="btn btn-primary theme-button">Связаться с нами</a>
+      </div>
+      <div class="list-single-view mt-5">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <div class="grids5-info">
+              <a href="#url" class="d-block zoom"><img src="../../static/assets/images/p11.png" alt="" class="img-fluid news-image" /></a>
+              <div class="blog-info">
+                <h4>Страница школы</h4>
+                <p class="blog-text">Визитная карточка образовательной организации в Дневник.ру: лица администрации, контакты, новости, правовые и прочие документы, объявления, фотогалерея, форум. Возможна настройка публичности страницы школы и ее разделов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-single-view mt-3">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <div class="grids5-info">
+              <a href="#url" class="d-block zoom"><img src="../../static/assets/images/schedule.png" alt="" class="img-fluid news-image" /></a>
+              <div class="blog-info">
+                <h4>Расписание и уроки</h4>
+                <p class="blog-text">Простой и понятный ввод расписания. Указывайте замены, переносы и отмены уроков. Просматривайте или распечатывайте расписание по классу на неделю, за весь отчётный период или сетку по всем учителям сразу.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-single-view mt-3">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <div class="grids5-info">
+              <a href="#url" class="d-block zoom"><img src="../../static/assets/images/journal.png" alt="" class="img-fluid news-image" /></a>
+              <div class="blog-info">
+                <h4>Электронный журнал</h4>
+                <p class="blog-text">Стандартный вид привычного бумажного журнала и ряд дополнительных представлений: журнал за день, журнал за неделю, страница урока. Администрация может выбрать системы оценивания и типы работ на уроках. Все представления журнала доступны в цветном и чёрно-белом вариантах. К любому уроку преподаватель может добавить комментарии и дополнительные материалы.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-single-view mt-3">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <div class="grids5-info">
+              <a href="#url" class="d-block zoom"><img src="../../static/assets/images/hometasks.png" alt="" class="img-fluid news-image" /></a>
+              <div class="blog-info">
+                <h4>Управление домашними заданиями</h4>
+                <p class="blog-text">Интерактивный модуль управления домашними заданиями позволяет выдавать их всему классу или отдельным ученикам, копировать задания для разных классов, добавлять к ним файлы и контролировать ход выполнения.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- stats -->
+ <!-- footer -->
+   <footer class="w3l-footer-29-main" id="footer">
+     <div class="footer-29 py-5">
+       <div class="container pb-lg-3">
+         <div class="row footer-top-29">
+           <div class="col-lg-4 col-md-6 footer-list-29 footer-1 mt-md-4">
+             <a class="footer-logo mb-md-3 mb-2" alt="" />Наши контакты</a>
+							<h4>Адрес:</h4>
+							<p>Россия, г.Kaзань, ул. Абдуллы Бичурина 22</p>
+						</div>
+					</div>
+					<div class="contact-info">
+						<div class="icon">
+							<span class="fa fa-phone" aria-hidden="true"></span>
+						</div>
+						<div class="contact-details">
+							<h4>Телефон:</h4>
+							<p><a href="tel:+598-658-456">+7(855)-232-56-98</a></p>
+							<p><a href="tel:+598-658-457">+7(855)-232-56-98</a></p>
+						</div>
+					</div>
+					<div class="contact-info">
+						<div class="icon">
+							<span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+						</div>
+						<div class="contact-details">
+							<h4>Почта:</h4>
+							<p><a href="mailto:mail@example.com" class="email">info@teach.com</a></p>
+							<p><a href="mailto:mail@example.com" class="email">teach@support.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+             </ul>
+           </div>
+           
+         </div>
+       </div>
+     </div>
+	 
+
+     <!-- move top -->
+   
+     <script>
+       // When the user scrolls down 20px from the top of the document, show the button
+       window.onscroll = function () {
+         scrollFunction()
+       };
+
+       function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+           document.getElementById("movetop").style.display = "block";
+         } else {
+           document.getElementById("movetop").style.display = "none";
+         }
+       }
+
+       // When the user clicks on the button, scroll to the top of the document
+       function topFunction() {
+         document.body.scrollTop = 0;
+         document.documentElement.scrollTop = 0;
+       }
+     </script>
+     <!-- /move top -->
+
+   </footer>

@@ -1,0 +1,229 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>eldiary.ru</title>
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- header -->
+<header class="w3l-header">
+	<div class="hero-header-11">
+		<div class="hero-header-11-content">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light py-md-2 py-0 px-0">
+					<a class="navbar-brand" href = "{% url 'home' %}"><img src="../../static/assets/images/снимок.png" alt="" /></a>
+					<!-- if logo is image enable this   
+				<a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+				</a> -->
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+						<span class="navbar-toggler-icon fa icon-close fa-times"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item @@contact-active">
+								<a class="nav-link" href = "{% url 'new3' %}">Мой дневник<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item @@about-active">
+								<a class="nav-link" href="{% url 'new' %}">Информация о школе</a>
+							</li>
+
+							<li class="nav-item @@contact-active">
+								<a class="nav-link" href="{% url 'landing' %}">Поддержка</a>
+							</li>
+							<li class="nav-item active">
+								{% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'logout_url' %}">Выйти</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'new2' %}">Войти</a>
+                    {% endif %}
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- //header -->
+ <!--  Main banner section -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<style>
+/* Demo Background */
+body{background:url(/images/bg/bg-6.png)}
+
+/* Form Style */
+.form-horizontal{
+ background: #fff;
+ padding-bottom: 40px;
+ border-radius: 15px;
+ text-align: center;
+ margin-top: 20px;
+ margin-left: 300px;
+ 
+}
+.form-horizontal .heading{
+ display: block;
+ font-size: 35px;
+ font-weight: 700;
+ padding: 35px 0;
+ border-bottom: 1px solid #f0f0f0;
+ margin-bottom: 30px;
+}
+.form-horizontal .form-group{
+ padding: 0 40px;
+ margin: 0 0 25px 0;
+ position: relative;
+}
+.form-horizontal .form-control{
+ background: #f0f0f0;
+ border: none;
+ border-radius: 20px;
+ box-shadow: none;
+ padding: 0 20px 0 45px;
+ height: 40px;
+ transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-control:focus{
+ background: #e0e0e0;
+ box-shadow: none;
+ outline: 0 none;
+}
+.form-horizontal .form-group i{
+ position: absolute;
+ top: 12px;
+ left: 60px;
+ font-size: 17px;
+ color: #c8c8c8;
+ transition : all 0.5s ease 0s;
+}
+.form-horizontal .form-control:focus + i{
+ color: #ff8f07;
+}
+.form-horizontal .fa-question-circle{
+ display: inline-block;
+ position: absolute;
+ top: 12px;
+ right: 60px;
+ font-size: 20px;
+ color: #808080;
+ transition: all 0.5s ease 0s;
+}
+.form-horizontal .fa-question-circle:hover{
+ color: #000;
+}
+.form-horizontal .main-checkbox{
+ float: left;
+ width: 20px;
+ height: 20px;
+ background: #ff8f07;
+ border-radius: 50%;
+ position: relative;
+ margin: 5px 0 0 5px;
+ border: 1px solid #ff8f07;
+}
+.form-horizontal .main-checkbox label{
+ width: 20px;
+ height: 20px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ cursor: pointer;
+}
+.form-horizontal .main-checkbox label:after{
+ content: "";
+ width: 10px;
+ height: 5px;
+ position: absolute;
+ top: 5px;
+ left: 4px;
+ border: 3px solid #fff;
+ border-top: none;
+ border-right: none;
+ background: transparent;
+ opacity: 0;
+ -webkit-transform: rotate(-45deg);
+ transform: rotate(-45deg);
+}
+.form-horizontal .main-checkbox input[type=checkbox]{
+ visibility: hidden;
+}
+.form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
+ opacity: 1;
+}
+.form-horizontal .text{
+ float: left;
+ margin-left: 7px;
+ line-height: 20px;
+ padding-top: 5px;
+ text-transform: capitalize;
+}
+.form-horizontal .btn{
+ float: right;
+ font-size: 14px;
+ color: #fff;
+ background: #ff8f07;
+ border-radius: 30px;
+ padding: 0 25px;
+ border: none;
+ text-transform: capitalize;
+ transition: all 0.5s ease 0s;
+}
+@media only screen and (max-width: 479px){
+ .form-horizontal .form-group{
+ padding: 0 25px;
+ }
+ .form-horizontal .form-group i{
+ left: 45px;
+ }
+ .form-horizontal .btn{
+ padding: 10px 20px;
+ }
+}
+
+</style>
+<div class="container">
+ <div class="row">
+<form method="POST">
+
+ <div class="col-md-offset-3 col-md-6">
+ <form class="form-horizontal">
+
+
+ <div class="form-group" style=" padding-left: 400px; text-align: center;">
+     {% csrf_token %}
+
+             {{form.as_ul}}
+
+     <input href="{% url 'new3' %}" type="submit" class="btn btn-outline-secondary theme-button" style=":" value="Войти"  />
+      {% if form.errors %}
+</div>
+    <p class="error" style="--text-color: red">Сожалеем, вы неправильно ввели логин или пароль.
+    Убедитесь, что вы ввели верные данные</p>
+  {% endif %}
+
+ </form>
+ </div>
+</form>
+ </div><!-- /.row -->
+</div><!-- /.container -->

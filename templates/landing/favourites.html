@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="bg">
+    {% csrf_token %}
+    {% for obj1 in ose5 %}
+
+        <div class="product-wrap" >
+          <div class="product-image" style="border:3px #734b21 solid;>
+            <a href="><img src="{{ obj1.image }}"></a>
+            <div class="shadow"></div>
+            <div class="actions">
+
+              <div class="actions-btn">
+                <div class="add-to-cart">
+
+                  <a class="add-to-cart-button" href="{% url 'house' %}"  title="Добавить в закладки"></a>
+
+                </div>
+
+                  <div class="add-to-compare">
+                    <a class="add-to-compare-button" href="#" title="Сравнить цены по рынку" onclick="alert('Расчитанная стоимость =  ' + {{  obj1.average_price }});"></a>
+                  </div>
+                  <div class="quikview">
+                      <a class="quikview-button" href="{{ obj1.http }}" title="Открыть на авито"></a>
+                  </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+                  <div class="product-list">
+                <h3>{{ obj1.geo }} </h3>
+                      <h2 >{{ obj1.har }}</h2>
+                    <div class="price">&#8381; {{obj1.price}}</div>
+    </div>
+    {% endfor %}
+    </div>
+    {% endblock content %}

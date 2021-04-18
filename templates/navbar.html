@@ -1,0 +1,58 @@
+<!-- Static navbar -->
+    <div class="navbar">
+    <div class="container top-container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="title" style="font-family: 'Open Sans';">Добро пожаловать на сайт поиска жилья sea.House!</h2>
+            </div>
+            </div>
+        </div>
+</div>
+
+    <nav class="navbar navbar-default navbar-main">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+{#          <a class="navbar-brand" href="#">Поиск жилья!</a>#}
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><img src="https://avatars.mds.yandex.net/get-pdb/2115127/3a6754dd-8c74-417a-9590-37e190f115a4/s1200?webp=false" style="height:40px; width: 40px; padding-top: 10px; "></li>
+            <li><a href="{% url 'home' %}">Домой</a></li>
+            <li><a href="{% url 'favourites' %}">Закладки</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Поиск <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'house' %}">Квартира</a></li>
+                <li><a href="#">Дом</a></li>
+                <li><a href="#">Снять</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Выгодные предложения</li>
+                <li><a href="#">Низкие цены</a></li>
+                <li><a href="#">Новые предложения</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <li class="basket-container">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout_url' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Выйти</a>
+                    {% else %}
+                    <a href="{% url 'login_url' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Вход и Регистрация</a>
+                    {% endif %}
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
