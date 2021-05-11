@@ -2,13 +2,17 @@ from django.db import models
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.shortcuts import reverse
+
 
 #Create your models here.
-class Homework(models.Model):
-    homework=models.TextField()
-    data_deposit=models.DateTimeField()
+#class Homework(models.Model):
+ #   homework=models.TextField()
+  #  data_deposit=models.DateTimeField()
 #    code_subject=models.IntegerField()
-
+class Employee(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    telephone = models.CharField(max_length=100)
 
 class Marks(models.Model):
     mark=models.IntegerField()
@@ -58,7 +62,7 @@ class Subjects(models.Model):
     name=models.TextField()
     subject_marks = models.ForeignKey('Marks', on_delete=models.SET_NULL, null=True)
     subject_schedule=models.ForeignKey('Schedule', on_delete=models.SET_NULL, null=True)
-    subject_homework = models.OneToOneField('Homework',on_delete=models.CASCADE)
+   # subject_homework = models.OneToOneField('Homework',on_delete=models.CASCADE)
 
 class Subscriber(models.Model):
    email = models.EmailField()

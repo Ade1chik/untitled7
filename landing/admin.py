@@ -25,7 +25,6 @@ class SubscriberAdmin (admin.ModelAdmin):
 
     class Meta:
         model = Subscriber
-        model = Homework
         model = Marks
         model = Pass
         model = Schedule
@@ -33,7 +32,7 @@ class SubscriberAdmin (admin.ModelAdmin):
         model = Pupil
         model = Users
         model = Subjects
-
+        model = Employee
         # model = Houses
 
 admin.site.register(Subscriber, SubscriberAdmin)

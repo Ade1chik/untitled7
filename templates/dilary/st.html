@@ -1,4 +1,4 @@
-
+{% csrf_token %}
 <html>
 <head>
 
@@ -59,7 +59,9 @@
       <div class="row cwp23-content align-items-center">
         <div class="col-lg-6 cwp23-text">
           <div class="cwp23-title">
-            <h3>Шамсеев Адель Ильгизович</h3>
+              {% for ose in ose5 %}
+            <h3>{{ ose.last_name }}</h3>
+
           </div>
           <div class="cwp23-text-cols">
             <div class="column">
@@ -75,20 +77,22 @@
             <div class="column">
 
               <a href="services.html">E-mail</a>
-              <p>sch189_kaz@mail.ru</p>
+              <p>{{ ose.email }}</p>
             </div>
             <div class="column">
 
               <a href="services.html">Классный руководитель</a>
-              <p>Прокопьева Анна Сергеевна</p>
-            </div>
+              <p>{{ ose.first_name}}</p>
+            </div>{%  endfor %}
           </div>
         </div>
         <div class="col-lg-6 mt-lg-0 mt-5 cwp23-img">
           <img src="../../static/assets/images/уч.jpg" class="img-fluid1" alt="" />
 
         </div>
-      </div><a href="{% url 'new5' %}" class="btn btn-outline-secondary theme-button11">Дневник</a>
+      </div>
+        {% if user.is_authenticated %}<a href="{% url 'new5' %}" class="btn btn-outline-secondary theme-button11">Дневник</a>
+        {% endif %}
 	    <a href="{% url 'new4' %}" class="btn btn-outline-secondary theme-button11">Журнал</a>
     </div>
   </div>

@@ -13,8 +13,8 @@ class SubscriberForm(forms.ModelForm):
 #     class Meta:
 #         model = Houses
 #         exclude = [""]
-class HomeworkForm(forms.ModelForm):
+#class HomeworkForm(forms.ModelForm):
 
-    class Meta:
-         model = Homework
-         exclude = [""]
+    #class Meta:
+     #    model = Homework
+      #   exclude = [""]

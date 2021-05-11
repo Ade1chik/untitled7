@@ -29,15 +29,15 @@ H3 {FONT-WEIGHT: bold; FONT-SIZE: 13pt; TEXT-ALIGN: center}
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item @@contact-active">
+							<li class="nav-item active">
 								<a class="nav-link" href = "{% url 'new3' %}">Мой дневник</a>
 							</li>
-							<li class="nav-item active">
-								<a class="nav-link" href="">Информация о школе<span class="sr-only">(current)</span></a>
+							<li class="nav-item @@contact-active">
+								<a class="nav-link" href="{% url 'new' %}">Информация о школе</a>
 							</li>
 
 							<li class="nav-item @@contact-active">
-								<a class="nav-link" href="services.html">Поддержка</a>
+								<a class="nav-link" href="{% url 'landing' %}">Поддержка</a>
 							</li>
 							<li class="nav-item @@contact-active">
 
@@ -88,318 +88,81 @@ H3 {FONT-WEIGHT: bold; FONT-SIZE: 13pt; TEXT-ALIGN: center}
         <b>Понедельник</b>
       </td>
       </tr>
-    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> 1 </p></td>
-      <td><p> Физика</p></td>
-      <td><p> Изучить параграф №1 </p></td>
-      <td><p align="center"> 4</p></td>
+      {% for ose1 in ose %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> Математика </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> Русский язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> Литература </p></td>
-      <td><p> Выучить стих </p></td>
-      <td><p align="center"> 5 </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> Физкультура </p></td>
-      <td><p> Принести форму </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 	  <tr bgcolor="#ff8f07">
       <td align="center" colspan="4">
         <b>Вторник</b>
       </td>
+      </tr>{% for ose1 in ose1 %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr width=950 bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 1 </p></td>
-      <td><p> Информатика </p></td>
-      <td><p> Составление программ </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> Иностранный язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> История </p></td>
-      <td><p> Культура раннего возрождения в Италии; </p></td>
-      <td><p align="center"> 5 </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> Технология </p></td>
-      <td><p> Изучение основ обработки дерева; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> Технология </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 	  <tr bgcolor="#ff8f07">
       <td  align="center" colspan="4">
         <b>Среда</b>
       </td>
       </tr>
-    <tr width=950 bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 1 </p></td>
-      <td><p> Изобразительное исскуство </p></td>
-      <td><p> Нарисовать эскиз(на тему "Отношение человека к миру")</p></td>
-      <td><p align="center"> 4 </p></td>
+  {% for ose1 in ose2 %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> Обществознание </p></td>
-      <td><p> пункт 12 в рабочей тетради </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> Математика </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> Русский язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> Русский язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 	  <tr bgcolor="#ff8f07">
       <td  align="center" colspan="4">
         <b>Четверг</b>
       </td>
+      </tr>{% for ose1 in ose3 %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr width=950 bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 1 </p></td>
-      <td><p> Иностранный язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> История </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> Математика </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 	  <tr bgcolor="#ff8f07">
       <td  align="center" colspan="4">
         <b>Пятница</b>
       </td>
+      </tr>{% for ose1 in ose4 %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr width=950 bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 1 </p></td>
-      <td><p> Физкультура </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> Физкультура </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> Русский язык; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> Иностранный язык </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 	  <tr bgcolor="#ff8f07">
       <td  align="center" colspan="4">
         <b>Суббота</b>
       </td>
+      </tr>{% for ose1 in ose5 %}
+    <tr width=970 bgcolor="#ffffff"  align="left">      <td><p align="center"> {{ ose1.subject_schedule.lesson_number }}</p></td>
+
+      <td><p>  {{  ose1.name }} </p></td>
+      <td><p> Тут должно быть домашнее задание </p></td>
+      <td><p align="center"> {{  ose1.subject_marks.mark}}</p></td>
       </tr>
-    <tr width=950 bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 1 </p></td>
-      <td><p> Физика </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 2 </p></td>
-      <td><p> Химия </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 3 </p></td>
-      <td><p> География </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 4 </p></td>
-      <td><p> Музыка </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 5 </p></td>
-      <td><p> Математика </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> 6 </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
-    <tr bgcolor="#ffffff"  align="left">
-      <td><p align="center"> - </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      <td><p> &nbsp; </p></td>
-      </tr>
+
+    {% endfor %}
 
   </TABLE>
   </center>

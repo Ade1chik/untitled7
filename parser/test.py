@@ -1,11 +1,12 @@
-import pandas as pd
-import numpy as np
+#import pandas as pd
+#import numpy as np
 import django
-django.setup()
+#jango.setup()d
 from django import forms
-from sklearn import linear_model
-from landing.models import Houses
+from django.db import models
+#from sklearn import linear_model
 from django.contrib.auth.models import User
+from landing.models import Schedule, Subjects, Schedule,Marks
 
 # new_df = pd.read_csv('house.csv', error_bad_lines=False)
 # # df1.columns = ['name1']
@@ -31,10 +32,18 @@ from django.contrib.auth.models import User
 
 # use = User.objects.get(id=1)
 # use.save()
-obj1 = Houses.objects.get(id=1860)
-obj1.save()
-obj2 = obj1.favourites.all()
-print(User.objects.get(user=request.user).favorites.all())
+#obj1 = Subjects()
+#obj1.code_subject = ("1")
+#obj1.name = ("Русский")
+#obj1.subject_homework_id=("1")
+#obj1.subject_marks_id=("1")
+#obj1.subject_schedule_id=("1")
+#obj1.save()
+
+obj1 = Subjects.objects.get(subject_schedule__day=1)
+print(obj1.name)
+#obj2 = obj1.favourites.all()
+#print(User.objects.get(user=request.user).favorites.all())
 
 
 
