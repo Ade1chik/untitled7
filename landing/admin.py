@@ -30,9 +30,9 @@ class SubscriberAdmin (admin.ModelAdmin):
         model = Schedule
         model = Teachers
         model = Pupil
-        model = Users
         model = Subjects
         model = Employee
+        # model = Users
         # model = Houses
 
 admin.site.register(Subscriber, SubscriberAdmin)

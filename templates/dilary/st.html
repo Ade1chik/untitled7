@@ -66,13 +66,15 @@
           <div class="cwp23-text-cols">
             <div class="column">
 
-              <a href="services.html">Класс</a>
-              <p>3(Б)</p>
+              <a href="services.html">Класс</a>{% for ose1 in ose4 %}
+              <p>{{ ose1.CLASS }}</p>
             </div>
+
             <div class="column">
 
               <a href="services.html">Телефон</a>
-              <p>+7(855)-232-56-98</p>
+              <p>{{ ose1.telephone }}</p>
+            {% endfor %}
             </div>
             <div class="column">
 
@@ -98,7 +100,7 @@
   </div>
 </section>
 
- <footer class="w3l-footer-29-main" id="footer">
+ <footer class="w3l-footer-29-main" id="footer" style="padding-top: 300px">
      <div class="footer-29 py-5">
        <div class="container pb-lg-3">
          <div class="row footer-top-29">

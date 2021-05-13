@@ -13,6 +13,9 @@ from django.shortcuts import reverse
 class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     telephone = models.CharField(max_length=100)
+    CLASS = models.CharField(max_length=100, default="10")
+    info = models.CharField(max_length=100, default=" ")
+
 
 class Marks(models.Model):
     mark=models.IntegerField()
@@ -28,7 +31,7 @@ class Schedule(models.Model):
     lesson_number=models.IntegerField()
     class_number=models.IntegerField()
     letter=models.TextField()
-  #  schedule_homework=models.OneToOneField(Homework)
+
 
 
 class Teachers(models.Model):
@@ -49,12 +52,12 @@ class Pupil(models.Model):
     pupil_pass = models.ForeignKey('Pass', on_delete=models.SET_NULL, null=True)
 
 
-class Users(models.Model):
-    type=models.TextField()
-    password=models.CharField(max_length=50)
-    login=models.TextField()
-    code=models.OneToOneField('Pupil',on_delete=models.CASCADE)
-    mod = models.OneToOneField('Teachers', on_delete=models.CASCADE)
+#class Users(models.Model):
+   # type=models.TextField()
+  #  password=models.CharField(max_length=50)
+   # login=models.TextField()
+   # code=models.OneToOneField('Pupil',on_delete=models.CASCADE)
+   # mod = models.OneToOneField('Teachers', on_delete=models.CASCADE)
 
 
 class Subjects(models.Model):

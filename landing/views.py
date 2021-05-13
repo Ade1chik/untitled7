@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
-from .models import Users, Subjects, Schedule, Pass, Teachers, Marks, Subscriber
+from .models import  Subjects, Schedule, Pass, Teachers, Marks, Subscriber, Employee
 from django.contrib.auth.models import User
 from requests.auth import HTTPBasicAuth
 from getpass import getpass
@@ -154,7 +154,8 @@ def new3(request):
     use2 = User.objects.get(username=us)
     use3 = use2.id
     ose5 = User.objects.filter(id=use3)
-    return render(request, 'dilary/st.html', context={'ose5': ose5 })
+    ose4 = Employee.objects.filter(user_id=use3)
+    return render(request, 'dilary/st.html', context={'ose5': ose5, 'ose4': ose4})
 
 
 def new5(request):
@@ -164,9 +165,13 @@ def new5(request):
     ose3 = Subjects.objects.filter(subject_schedule__day=4).order_by('subject_schedule__lesson_number')
     ose4 = Subjects.objects.filter(subject_schedule__day=5).order_by('subject_schedule__lesson_number')
     ose5 = Subjects.objects.filter(subject_schedule__day=6).order_by('subject_schedule__lesson_number')
-
+    us = request.user
+    use2 = User.objects.get(username=us)
+    use3 = use2.id
+    ose6 = User.objects.filter(id=use3)
+    ose7 = Employee.objects.filter(user_id=use3)
     return render(request, 'dilary/res.html', context={'ose': ose, 'ose2': ose2, 'ose3': ose3, 'ose4': ose4,
-                                                       'ose5': ose5, 'ose1': ose1 })
+                                                       'ose5': ose5, 'ose1': ose1,'ose7': ose7 })
 
 def new4(request):
 

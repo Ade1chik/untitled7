@@ -67,9 +67,9 @@ H3 {FONT-WEIGHT: bold; FONT-SIZE: 13pt; TEXT-ALIGN: center}
 		<td width=290>
 		<p>&nbsp;</p></td>
 		<td width=428>
-		<p>&nbsp;</p>
-		<h3>Расписание уроков Х-го &quot;Х&quot; класса<br>
-		с Х по Х ххххх 200Хг.</h3>
+		<p>&nbsp;</p> {% for ose8 in ose7 %}
+		<h3>Расписание уроков {{ ose8.CLASS }} класса<br></h3>
+            {% endfor %}
 		</td><td width=290  valign="top">
         <p  align="right">
 		<br>
@@ -168,7 +168,7 @@ H3 {FONT-WEIGHT: bold; FONT-SIZE: 13pt; TEXT-ALIGN: center}
   </center>
 </body>
 </html>
- <footer class="w3l-footer-29-main" id="footer">
+ <footer class="w3l-footer-29-main" id="footer" style="padding-top: 300px">
      <div class="footer-29 py-5">
        <div class="container pb-lg-3">
          <div class="row footer-top-29">
