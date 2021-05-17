@@ -65,11 +65,17 @@
           </div>
           <div class="cwp23-text-cols">
             <div class="column">
-
-              <a href="services.html">Класс</a>{% for ose1 in ose4 %}
+{% for ose1 in  ose4 %}
+            {% if ose1.info == "1" %}
+              <a href="services.html">Класс</a>
               <p>{{ ose1.CLASS }}</p>
+                {% else %}
+                <a>Должность</a>
+                <p>Преподаватель</p>
+            {% endif %}
+    {% endfor %}
             </div>
-
+{% for ose1 in ose4 %}
             <div class="column">
 
               <a href="services.html">Телефон</a>
@@ -82,9 +88,11 @@
               <p>{{ ose.email }}</p>
             </div>
             <div class="column">
-
+{% for ose1 in  ose4 %}
+            {% if ose1.info == "1" %}
               <a href="services.html">Классный руководитель</a>
               <p>{{ ose.first_name}}</p>
+   {% endif %} {% endfor %}
             </div>{%  endfor %}
           </div>
         </div>
@@ -93,9 +101,13 @@
 
         </div>
       </div>
-        {% if user.is_authenticated %}<a href="{% url 'new5' %}" class="btn btn-outline-secondary theme-button11">Дневник</a>
+        {% for ose1 in  ose4 %}
+            {% if ose1.info == "1" %}<a href="{% url 'new5' %}" class="btn btn-outline-secondary theme-button11">Дневник</a>
+                {% else %}
+                <a href="{% url 'new4' %}" class="btn btn-outline-secondary theme-button11">Журнал</a>
         {% endif %}
-	    <a href="{% url 'new4' %}" class="btn btn-outline-secondary theme-button11">Журнал</a>
+    {% endfor %}
+
     </div>
   </div>
 </section>

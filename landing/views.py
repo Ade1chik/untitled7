@@ -155,6 +155,7 @@ def new3(request):
     use3 = use2.id
     ose5 = User.objects.filter(id=use3)
     ose4 = Employee.objects.filter(user_id=use3)
+
     return render(request, 'dilary/st.html', context={'ose5': ose5, 'ose4': ose4})
 
 
@@ -174,8 +175,13 @@ def new5(request):
                                                        'ose5': ose5, 'ose1': ose1,'ose7': ose7 })
 
 def new4(request):
-
-    return render(request, 'dilary/index3.html', locals())
+    use = User.objects.all()
+    us = request.user
+    use2 = User.objects.get(username=us)
+    use3 = use2.id
+    ose5 = User.objects.filter(id=use3)
+    ose4 = Employee.objects.filter(user_id=use3)
+    return render(request, 'dilary/index3.html', context={'ose5': ose5, 'ose4': ose4})
 
 
 
